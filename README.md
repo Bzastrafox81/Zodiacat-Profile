@@ -1,1 +1,1 @@
-# Zodiacat-s-Profile
+# Zodiacat-Profile
