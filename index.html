@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zodiacat81 Profile</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  background: radial-gradient(circle at bottom, #0a0c26, #04051a 80%);
+  color: #f0f0ff;
+  overflow-x: hidden;
+}
+
+/* STARFIELD BACKGROUND */
+.stars, .twinkling {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+}
+.stars {
+  background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+  animation: moveStars 160s linear infinite;
+  opacity: .6;
+}
+.twinkling {
+  background: url('https://www.transparenttextures.com/patterns/tiny-stars.png') repeat;
+  animation: moveTwinkle 120s linear infinite;
+  opacity: .5;
+}
+@keyframes moveStars { from{background-position:0 0;} to{background-position:10000px 10000px;} }
+@keyframes moveTwinkle { from{background-position:0 0;} to{background-position:-10000px 10000px;} }
+
+/* LAYOUT WRAPPER */
+.wrapper {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 260px;
+  background: rgba(25, 25, 55, .7);
+  border-right: 1px solid rgba(150,130,255,.2);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 15px;
+  box-shadow: 0 0 30px rgba(120,100,255,.2);
+}
+.sidebar h2 {
+  color: #d0ccff;
+  margin-top: 15px;
+}
+.profile-pic {
+  width: 110px; height: 110px;
+  border-radius: 50%;
+  background: linear-gradient(145deg,#6666ff,#3b3b99);
+  border: 2px solid rgba(160,120,255,.5);
+  box-shadow: 0 0 20px rgba(150,110,255,.5);
+  display:flex; align-items:center; justify-content:center;
+  font-size:13px; letter-spacing:1px; color:rgba(255,255,255,.6);
+  position: relative;
+  background: url(IMG_20250910_194104.jpg) center/cover no-repeat;
+}
+.profile-pic::before {
+  content:"";
+  position:absolute; inset:-6px;
+  border-radius:50%;
+  border:2px solid transparent;
+  background:linear-gradient(90deg,#b58cff,#6b6bff,#b58cff) border-box;
+  -webkit-mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:destination-out; mask-composite:exclude;
+  animation:ringSpin 6s linear infinite;
+}
+@keyframes ringSpin { to{transform:rotate(360deg);} }
+
+.nav {
+  margin-top:40px;
+  width:100%;
+}
+.nav button {
+  width:100%;
+  padding:12px;
+  background:transparent;
+  border:none;
+  color:#c9c8ff;
+  text-align:left;
+  font-weight:600;
+  border-radius:10px;
+  transition:.3s;
+}
+.nav button:hover,
+.nav button.active {
+  background:rgba(150,120,255,.25);
+  box-shadow:0 0 10px rgba(150,120,255,.4);
+}
+
+/* MAIN CONTENT */
+.main {
+  flex:1;
+  overflow-y:auto;
+  padding:40px 60px;
+  backdrop-filter:blur(8px);
+}
+.main h1 {
+  font-size:2em;
+  color:#d6d4ff;
+  margin-bottom:5px;
+}
+.main h3 {
+  color:#aaa8ff;
+  margin-top:30px;
+  border-bottom:1px solid rgba(160,140,255,.2);
+  padding-bottom:6px;
+}
+.section {
+  animation:fadeSlide .8s ease;
+}
+@keyframes fadeSlide {
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+p, ul {
+  line-height:1.6;
+  color:#e4e4ff;
+}
+ul {padding-left:20px;}
+footer {
+  text-align:center;
+  margin-top:60px;
+  font-size:12px;
+  color:#aaa;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    height: auto;
+  }
+  .sidebar {
+    width: 100%;
+    flex-direction: column;
+    border-right: none;
+    border-bottom: 1px solid rgba(150,130,255,.2);
+    padding: 20px 10px;
+    box-shadow: 0 4px 20px rgba(120,100,255,.2);
+  }
+  .profile-pic {
+    width: 90px; height: 90px;
+  }
+  .nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  .nav button {
+    text-align: center;
+    font-size: 14px;
+    padding: 8px 12px;
+    flex: 1;
+  }
+  .main {
+    padding: 20px 25px;
+  }
+  .main h1 { font-size: 1.5em; }
+}
+</style>
+</head>
+
+<body>
+<div class="stars"></div>
+<div class="twinkling"></div>
+
+<div class="wrapper">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="profile-pic"></div>
+    <h2>Zodiacat</h2>
+    <p style="color:#a8b8ff; font-size:14px;">zodiacat81 • aka zodi/zoki/dawgo</p>
+
+    <div class="nav">
+      <button class="active" onclick="showSection('overview', this)">Overview</button>
+      <button onclick="showSection('activities', this)">Information</button>
+      <button onclick="showSection('contacts', this)">Extra</button>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main">
+    <div id="overview" class="section">
+      <h1>Introduction</h1>
+      <p>Good day to you! I would like to intoduce myself to this my life in social media through this amazing profile.</p>
+
+      <h3>About me</h3>
+      <ul>
+       <li>Name: Zodiacat</li>
+        <li>Nicknames: Zodicat | Zodi | Zoki | Dawgo</li>
+        <li>Age: 15</li>
+        <li>Birthdate: December 21</li>
+        <li>Gender: Male</li>
+        <li>Sexuality: Aroace</li>
+      </ul>
+
+      <h3>Others:</h3>
+      <ul>
+        <li>Neutral</li>
+        <li>Introvert/Chill</li>
+        <li>Multifandom</li>
+        <li>MBTI: ISFP</li>
+      </ul>
+    </div>
+
+    <div id="activities" class="section" style="display:none;">
+       <h1>Information</h1>
+
+      <h3>More about me</h3>
+      <p>If you want to really know what or how I do in social life. I am the type of person who:</p>
+      <ul>
+        <li>really likes listening to people but I dont really know how or what to respond when I lack processing</li>
+        <li>usually reply fast, not that fast due to business or laziness</li>
+        <li>is slow to process & understand since I lack Vocabulary</li>
+        <li>is weak at his own national language, and I dont really know why</li>
+        <li>has a forgetful memory or just because I forgot :P</li>
+        <li>is curious at most everything if I wanted to</li>
+        <li>is friendly and mostly honest</li>
+        <li>has lack of entertainment since I found it somethimes boring</li>
+        <li>doesnt swear much since I dont hurt people or situational</li>
+        <li>likely has ADHD (not diagnosed but assumed by the test result online)</li>
+        <li>is into much to social media especially tikok</li>
+      </ul>
+
+      <h3>Likes</h3>
+      <ul>
+        <li>Color: Purple, Red, Blue (may depend on chosen fandom)</li>
+        <li>Games: Roblox, MLBB, Minesweeper, Geometry Dash</li>
+        <li>Music: Vocaloid, Fanmade Cartoon Music (idk what thery are called)</li>
+      </ul>
+
+      <h3>Dislikes</h3>
+      <ul>
+        <li>Toxicity</li>
+        <li>Rage Baiter (getting used to it)</li>
+        <li>Acting/Drama Acting</li>
+        <li>Public Speaking</li>
+      </ul>
+    </div>
+
+    <div id="contacts" class="section" style="display:none;">
+      <h1>Other things:</h1>
+
+      <h3>Social Links</h3>
+      <ul>
+        <li>Twitter/X : <a href="https://x.com/Zodicat81">@Zodicat81</a></li>
+        <li>Pinterest : <a href="https://ph.pinterest.com/Zodicat_Grayfox/">@Zoki_Grayfox</a> </li>
+        <li>Discord : @dawgo-zoki</li>
+        <li>Youtube : <a href="https://www.youtube.com/channel/UCmavUx2nILusPiRoShnwOKA">@Zodicat</a> </li>
+        <li>Twitch : <a href="https://www.twitch.tv/zodiacat81">@zodiacat81</a> </li>
+        <li>Reddit : <a href="https://www.reddit.com/user/Zodicat81/">@Zodicat</a> </li>
+        <li>Roblox : <a href="https://www.roblox.com/users/5231790749/profile">@zodiacat81</a> </li>
+        <li>Tiktok : <a href="https://www.tiktok.com/@zodiacat_grayfox?lang=en">@Zodicat_Grayfox</a> </li>
+        <li>Tumblr : <a href="https://www.tumblr.com/blog/zodiacat81">@zodiacat81</a> </li>
+    </ul>
+
+      <footer>Galaxy Layout B • Responsive Version • Violet-Blue Theme</footer>
+    </div>
+  </div>
+</div>
+
+<script>
+function showSection(id, el){
+  document.querySelectorAll('.section').forEach(sec=>sec.style.display='none');
+  document.getElementById(id).style.display='block';
+  document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+}
+</script>
+
+</body>
+</html>
