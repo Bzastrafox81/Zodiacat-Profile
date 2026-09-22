@@ -11,8 +11,8 @@
 body {
   margin: 0;
   font-family: 'Quicksand', sans-serif;
-  background: radial-gradient(circle at bottom, #0a0c26, #04051a 80%);
-  color: #f0f0ff;
+  background: radial-gradient(circle at bottom, #181818, #000000 80%);
+  color: #f0f0f0;
   overflow-x: hidden;
 }
 
@@ -47,25 +47,25 @@ body {
 /* SIDEBAR */
 .sidebar {
   width: 260px;
-  background: rgba(25, 25, 55, .7);
-  border-right: 1px solid rgba(150,130,255,.2);
+  background: rgba(25, 25, 25, .7);
+  border-right: 1px solid rgba(255,255,255,.2);
   backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 30px 15px;
-  box-shadow: 0 0 30px rgba(120,100,255,.2);
+  box-shadow: 0 0 30px rgba(255,255,255,.1);
 }
 .sidebar h2 {
-  color: #d0ccff;
+  color: #ffffff;
   margin-top: 15px;
 }
 .profile-pic {
   width: 110px; height: 110px;
   border-radius: 50%;
-  background: linear-gradient(145deg,#6666ff,#3b3b99);
-  border: 2px solid rgba(160,120,255,.5);
-  box-shadow: 0 0 20px rgba(150,110,255,.5);
+  background: linear-gradient(145deg,#777777,#222222);
+  border: 2px solid rgba(255,255,255,.5);
+  box-shadow: 0 0 20px rgba(255,255,255,.3);
   display:flex; align-items:center; justify-content:center;
   font-size:13px; letter-spacing:1px; color:rgba(255,255,255,.6);
   position: relative;
@@ -76,7 +76,7 @@ body {
   position:absolute; inset:-6px;
   border-radius:50%;
   border:2px solid transparent;
-  background:linear-gradient(90deg,#b58cff,#6b6bff,#b58cff) border-box;
+  background:linear-gradient(90deg,#ffffff,#777777,#ffffff) border-box;
   -webkit-mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);
   -webkit-mask-composite:destination-out; mask-composite:exclude;
   animation:ringSpin 6s linear infinite;
@@ -92,7 +92,7 @@ body {
   padding:12px;
   background:transparent;
   border:none;
-  color:#c9c8ff;
+  color:#dddddd;
   text-align:left;
   font-weight:600;
   border-radius:10px;
@@ -100,8 +100,8 @@ body {
 }
 .nav button:hover,
 .nav button.active {
-  background:rgba(150,120,255,.25);
-  box-shadow:0 0 10px rgba(150,120,255,.4);
+  background:rgba(255,255,255,.15);
+  box-shadow:0 0 10px rgba(255,255,255,.2);
 }
 
 /* MAIN CONTENT */
@@ -113,13 +113,13 @@ body {
 }
 .main h1 {
   font-size:2em;
-  color:#d6d4ff;
+  color:#ffffff;
   margin-bottom:5px;
 }
 .main h3 {
-  color:#aaa8ff;
+  color:#bbbbbb;
   margin-top:30px;
-  border-bottom:1px solid rgba(160,140,255,.2);
+  border-bottom:1px solid rgba(255,255,255,.2);
   padding-bottom:6px;
 }
 .section {
@@ -131,14 +131,14 @@ body {
 }
 p, ul {
   line-height:1.6;
-  color:#e4e4ff;
+  color:#e4e4e4;
 }
 ul {padding-left:20px;}
 footer {
   text-align:center;
   margin-top:60px;
   font-size:12px;
-  color:#aaa;
+  color:#aaaaaa;
 }
 
 /* RESPONSIVE DESIGN */
@@ -151,9 +151,9 @@ footer {
     width: 100%;
     flex-direction: column;
     border-right: none;
-    border-bottom: 1px solid rgba(150,130,255,.2);
+    border-bottom: 1px solid rgba(255,255,255,.2);
     padding: 20px 10px;
-    box-shadow: 0 4px 20px rgba(120,100,255,.2);
+    box-shadow: 0 4px 20px rgba(255,255,255,.1);
   }
   .profile-pic {
     width: 90px; height: 90px;
@@ -188,7 +188,7 @@ footer {
   <div class="sidebar">
     <div class="profile-pic"></div>
     <h2>Zodiacat</h2>
-    <p style="color:#a8b8ff; font-size:14px;">zodiacat81 • aka zodi/zoki/dawgo/zawgido</p>
+    <p style="color:#cccccc; font-size:14px;">zodiacat81 • aka zodi/zoki/dawgo/zawgido</p>
 
     <div class="nav">
       <button class="active" onclick="showSection('overview', this)">Overview</button>
@@ -279,7 +279,7 @@ footer {
         <li>Bluesky : <a href="https://bsky.app/profile/zodiacat81.bsky.social">@zodiacat81.bsky.social</a> </li>
     </ul>
 
-      <footer>Updated in 22 August, 2026</footer>
+      <footer>Updated in 22 September, 2026</footer>
     </div>
   </div>
 </div>
@@ -295,4 +295,3 @@ function showSection(id, el){
 
 </body>
 </html>
-
